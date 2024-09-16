@@ -3,8 +3,8 @@
 pragma solidity ^0.8.19;
 
 import {Test} from "forge-std/Test.sol";
-import {FundMe} from "../src/FundMe.sol";
-import {DeployFundMe} from "../script/DeployFundMe.s.sol";
+import {FundMe} from "../../src/FundMe.sol";
+import {DeployFundMe} from "../../script/DeployFundMe.s.sol";
 
 contract FundMeTest is Test {
     FundMe fundMe;
@@ -76,8 +76,7 @@ contract FundMeTest is Test {
     function testWithdrawWithMultipleFunders() public {
         uint160 numberOfFunders = 10;
         uint160 startingFundersIndex = 1;
-        for(uint160 i = startingFundersIndex; i < numberOfFunders; i++){
-
+        for (uint160 i = startingFundersIndex; i < numberOfFunders; i++) {
             hoax(address(i), SEND_VALUE); // it does both prank and deal combine
             fundMe.fund{value: SEND_VALUE}();
         }
