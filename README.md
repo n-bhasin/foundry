@@ -77,8 +77,6 @@ Head over to [faucets.chain.link](https://faucets.chain.link/) and get some test
 
 forge script script/DeployFundMe.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY
 
-```
-
 ## Scripts
 
 After deploying to a testnet or local net, you can run the scripts.
@@ -92,6 +90,7 @@ cast send <FUNDME_CONTRACT_ADDRESS> "fund()" --value 0.1ether --private-key <PRI
 ```
 
 or
+
 ```
 
 forge script script/Interactions.s.sol:FundFundMe --rpc-url sepolia --private-key $PRIVATE_KEY --broadcast
@@ -119,13 +118,13 @@ forge snapshot
 
 And you'll see an output file called `.gas-snapshot`
 
-
 # Formatting
 
-
 To run code formatting:
+
 ```
 
 forge fmt
+```
 
 # Thank you!
